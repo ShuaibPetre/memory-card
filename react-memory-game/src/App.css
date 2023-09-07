@@ -1,0 +1,71 @@
+@font-face {
+    font-family: my-font;
+    src: url("./assets/PixelEmulator-xq08.ttf");
+  }
+
+#root {
+    font-size: 16px;
+    font-family: "my-font";
+    font-stretch: expanded;
+}
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+.startscreen {
+    background:url("./assets/images/start-bg.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.startscreendiv {
+    width: auto;
+    position: center;
+    background: rgba(255, 246, 246, 1);
+    padding: 3vw;
+    border: black;
+    border-style: double;
+}
+.game {
+    background: url("./assets/images/main-bg.png");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.cards>button {
+    appearance:none;
+    background: transparent;
+    font-size: 12px;
+    border: thin solid black;
+    color: white
+}
+.cards {
+    display: grid;
+    grid-template-columns: minmax(60px, 120px) minmax(60px, 120px) minmax(60px, 120px);
+    grid-template-rows: minmax(75px, 160px) minmax(75px, 160px) minmax(75px, 160px);
+    
+    gap: 2vw;
+}
+.board {
+    padding: 2vw;
+}
+.cards>button:focus,
+.cards>button:active,
+.cards>button:hover{
+    appearance: none;
+    border: thin solid black;
+    background:transparent;
+	outline:transparent;
+}
+@media (max-width: 481px) {
+
+.game {
+  display:flex;
+  flex-direction: column;
+}
+}
