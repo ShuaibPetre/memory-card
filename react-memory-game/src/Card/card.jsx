@@ -3,7 +3,7 @@ import { NumberArray } from '../App'
 
 export default function Card(props) {
     const [picture, setPicture] = useState(null)
-    const [pokemon, setPokemon] = useState(null);
+    const [pokemon, setPokemon] = useState(null)
     const numbers = useContext(NumberArray)
     // eslint-disable-next-line react/prop-types
     const index = props.index
@@ -28,12 +28,9 @@ export default function Card(props) {
         }
     }, [thisPoke])
     return (
-        <div className="card">
-            <div className="front">
-                <img id={thisPoke} src={picture} alt="" />
-                <div className="name">{pokemon}</div>
-            </div>
-            <div className="back"></div>
-        </div>
+        <button className="card" onClick={props.onClick}>
+            <img id={thisPoke} src={picture} alt="" />
+            <div className="name">{pokemon}</div>
+        </button>
     )
 }

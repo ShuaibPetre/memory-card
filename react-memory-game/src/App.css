@@ -1,19 +1,18 @@
 @font-face {
     font-family: my-font;
-    src: url("./assets/PixelEmulator-xq08.ttf");
-  }
+    src: url('./assets/PressStart2P-vaV7.ttf');
+}
 
 #root {
-    font-size: 16px;
-    font-family: "my-font";
-    font-stretch: expanded;
+    font-size: 14px;
+    font-family: 'my-font';
 }
 .container {
     width: 100vw;
     height: 100vh;
 }
 .startscreen {
-    background:url("./assets/images/start-bg.jpg");
+    background: url('./assets/images/start-bg.jpg');
     background-size: cover;
     width: 100%;
     height: 100%;
@@ -30,42 +29,95 @@
     border-style: double;
 }
 .game {
-    background: url("./assets/images/main-bg.png");
+    background: url('./assets/images/main-bg.png');
     background-size: cover;
     width: 100%;
     height: 100%;
     display: flex;
+    justify-content: center;
 }
 
-.cards>button {
-    appearance:none;
+.card > button {
+    appearance: none;
     background: transparent;
-    font-size: 12px;
     border: thin solid black;
-    color: white
+    color: white;
+    padding: 0;
 }
 .cards {
-    display: grid;
-    grid-template-columns: minmax(60px, 120px) minmax(60px, 120px) minmax(60px, 120px);
-    grid-template-rows: minmax(75px, 160px) minmax(75px, 160px) minmax(75px, 160px);
-    
-    gap: 2vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1vw;
+    width: 450px;
 }
-.board {
+button.card,
+.card-back {
+    background: transparent;
+    padding: 0;
+    border: thin solid black;
+    background: rgb(110, 110, 110, 0.3);
+    padding-bottom: 2vh;
+    width: 120px;
+    height: 170px;
+    font-size: 10px;
+    color: white;
+}
+.card-back {
+    background: url('./assets/images/pokecard.jpeg');
+    background-size: cover;
+}
+img {
+    width: 100px;
+    height: 100px;
+}
+.board, .score,.volumediv {
     padding: 2vw;
 }
-.cards>button:focus,
-.cards>button:active,
-.cards>button:hover{
+button:focus,
+button:active,
+button:hover {
     appearance: none;
     border: thin solid black;
-    background:transparent;
-	outline:transparent;
+    background: transparent;
+    outline: transparent;
+    padding: 0;
+}
+.volume {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    padding: 0;
+    border-radius: 50%;
+    border: none
+}
+svg {
+    width: 2rem;
+    height: 2rem;
 }
 @media (max-width: 481px) {
-
-.game {
-  display:flex;
-  flex-direction: column;
-}
+    .game {
+        display: flex;
+        flex-direction: column;
+    }
+    img {
+        width: 30vw;
+    }
+    .diffbtns {
+        display: flex;
+        flex-direction: column;
+    }
+    .startscreendiv {
+        font-size: 14px;
+        justify-self: flex-start;
+    }
+    .cards {
+        width: 100%;
+    }
+    button.card,
+    .card-back {
+        width: 30vw;
+        height: 20vh;
+        font-size: 18px;
+        overflow-wrap: break-word;
+    }
 }
